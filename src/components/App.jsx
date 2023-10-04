@@ -1,16 +1,23 @@
 export const App = () => {
+
+  const dragHandle = e => {
+    // console.log('x', e.pageX);
+    // console.log('y', e.pageY);
+    console.log(e);
+  }
+
   return (
     <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
+    draggable={true}
+    // onDragEnd={dragHandle}
+    onDragEnd={(e) => (dragHandle(e))}
+    // onDragStart={(e) => (dragHandle(e))}
     >
-      React homework template
+      <form>
+        <input type={'text'} />
+        <button>+</button>
+        <button>-</button>
+      </form>
     </div>
   );
 };
